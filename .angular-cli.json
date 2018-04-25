@@ -9,7 +9,16 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "assets/images",
+        "favicon.ico",
+        "Down.png",
+        "Left.png",
+        "LeftLeft.png",
+        "Right.png",
+        "RightRight.png",
+        "Up.png",
+        "UpUp.png",
+        "DownDown.png"
       ],
       "index": "index.html",
       "main": "main.ts",

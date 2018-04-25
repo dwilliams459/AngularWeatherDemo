@@ -6,13 +6,17 @@
   </h1>
 </div>
 <div>
-  <move-button buttonText="<<" moveHorizontal=-10 (buttonClicked)='onMove(5, 0)'></move-button>
-  <move-button buttonText="<" moveHorizontal=-5   (buttonClicked)='onMove(5, 0)'></move-button>
-  <move-button buttonText=">" moveHorizontal=5    (buttonClicked)='onMove(5, 0)'></move-button>
-  <move-button buttonText=">>" moveHorizontal=10  (buttonClicked)='onMove(5, 0)'></move-button>
+  <move-button buttonText="<<" imageName="assets/images/LeftLeft.png" moveHorizontal=-10 (horizontalClicked)='onHorizontalMove($event)'></move-button>
+  <move-button buttonText="<"  imageName="assets/images/Left.png" moveHorizontal=-5   (horizontalClicked)='onHorizontalMove($event)'></move-button>
+  <move-button buttonText=">"  imageName="assets/images/Right.png" moveHorizontal=5    (horizontalClicked)='onHorizontalMove($event)'></move-button>
+  <move-button buttonText=">>" imageName="assets/images/RightRight.png" moveHorizontal=10  (horizontalClicked)='onHorizontalMove($event)'></move-button>
 </div>
 <h3>Location</h3>
 <ul>
   <li>Horizontal:{{locationHorizontal}}</li>
   <li>Vertial:{{locationVertical}}</li>
 </ul>
+<div>
+  <h3>Weather</h3>
+
+</div>

@@ -10,15 +10,21 @@ export class AppComponent {
   title = 'Raspberry Controller';
   locationVertical: number = 0;
   locationHorizontal: number = 0;
+  weather: string;
   hoz: number = 0;
 
-  onMove(horizontal: any, vertical: number) {
-    console.log(`test h:${horizontal}`);
-    this.locationHorizontal = (horizontal > 0) 
-      ? (this.locationHorizontal + horizontal) : (this.locationHorizontal - horizontal);
+  onMove(horizontal: number, vertical: number) {
+    this.locationHorizontal = this.locationHorizontal + horizontal;
     this.locationVertical = this.locationVertical + vertical;
     console.log(`h:${horizontal} v:${vertical}`);
-    var hoz = (+horizontal > 0) ? "true" : "false"; // ? (this.locationHorizontal + horizontal) : (this.locationHorizontal - horizontal);
-    console.log(`${hoz}`)
+  }
+
+  onHorizontalMove(horizontal: number) {
+    this.locationHorizontal = (1*this.locationHorizontal) + (1*horizontal);
+    console.log(`h:${this.locationHorizontal} v:${this.locationVertical}`);
+  }
+  onVerticalMove(vertical: number) {
+    this.locationVertical = (1*this.locationVertical) + (1*vertical);
+    console.log(`h:${this.locationHorizontal} v:${this.locationVertical}`);
   }
 }
