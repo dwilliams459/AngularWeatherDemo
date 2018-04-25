@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { MoveButtonComponent } from './move-button/move-button.component';
+import { AlertModule } from 'ngx-bootstrap'
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { MoveButtonComponent } from './move-button/move-button.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
