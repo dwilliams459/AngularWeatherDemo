@@ -8,7 +8,6 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angu
 })
 export class MoveButtonComponent implements OnInit {
   errorMessage: any;
-  weather: any;
   imageMargin: number = 2;
 
   @Input() buttonText: string = "button";

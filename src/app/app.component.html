@@ -5,7 +5,7 @@
     <img width="50" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
   </h1>
 </div>
-<div class="w-25 p-3">
+<div class="w-35 p-3" style="float:left;" >
   <h3>Location</h3>
   <div>
     <move-button buttonText="<<" imageName="assets/images/LeftLeft.png" moveHorizontal=-10 (horizontalClicked)='onHorizontalMove($event)'></move-button>
@@ -19,8 +19,22 @@
     <move-button buttonText=">" imageName="assets/images/Down.png" moveVertical=5 (verticalClicked)='onVerticalMove($event)'></move-button>
     <move-button buttonText=">>" imageName="assets/images/DownDown.png" moveVertical=10 (verticalClicked)='onVerticalMove($event)'></move-button>
   </div>
-  <alert type="success" style="width:200px;display:block;">Horizontal:{{locationHorizontal}} Vertial:{{locationVertical}}</alert>
+  <alert type="success" style="width:200px;display:block;font-size:14pt;">Horizontal: {{locationHorizontal}} <br/>Vertial: {{locationVertical}}</alert>
 </div>
-<div class="w-25 p-3">
+<div class="p-3" style="width:500px; float:left;">
   <h3>Weather</h3>
-</div>
+  <weather-button city="charlotte" cityName="Charlotte" (weatherClicked)='onWeatherClicked($event)'></weather-button>
+  <weather-button city="birmingham" cityName="Birmingham" (weatherClicked)='onWeatherClicked($event)'></weather-button>
+  <weather-button city="atlanta" cityName="Atlanta" (weatherClicked)='onWeatherClicked($event)'></weather-button>
+  <div id="weather-forcast" *ngIf="forecast">
+    <h4 style="margin-top:15px;">Current Conditions</h4>
+    <ul class="list-group">
+      <li class="list-group-item">Description: {{description}}</li>
+      <li class="list-group-item">Temprature: {{temprature}}</li>
+      <li class="list-group-item">Min Temprature: {{minTemprature}}</li>
+      <li class="list-group-item">Max Temprature: {{maxTemprature}}</li>
+      <li class="list-group-item">Wind Speed: {{windSpeed}}</li>
+      <li class="list-group-item">Preasure: {{preasure}}</li>
+    </ul>
+    <alert type="warning" class="d-inline-flex p-2" id="rawJson">{{forecast}}</alert>
+  </div>

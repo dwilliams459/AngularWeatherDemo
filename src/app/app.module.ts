@@ -4,11 +4,14 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { MoveButtonComponent } from './move-button/move-button.component';
 import { AlertModule } from 'ngx-bootstrap'
+import { WeatherButtonComponent } from './weather-button/weather-button.component';
+import * as jsonPath from 'jsonparse/jsonparse';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoveButtonComponent
+    MoveButtonComponent,
+    WeatherButtonComponent
   ],
   imports: [
     BrowserModule,
