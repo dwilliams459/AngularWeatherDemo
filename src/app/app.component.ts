@@ -11,12 +11,12 @@ import * as jsonPath from "jsonpath/jsonpath"
   providers: [ WeatherService ]
 })
 export class AppComponent {
-  title = 'Location/Weather Demo';
+  title = 'Angular Demo';
   locationVertical: number = 0;
   locationHorizontal: number = 0;
-  forecast: string;
-  hoz: number = 0;
 
+  // Weather properties  
+  forecast: string;
   temprature: number;
   preasure: number;
   minTemprature: number;
@@ -24,24 +24,17 @@ export class AppComponent {
   windSpeed: number;
   description: string;
 
-
-  onMove(horizontal: number, vertical: number) {
-    this.locationHorizontal = this.locationHorizontal + horizontal;
-    this.locationVertical = this.locationVertical + vertical;
-    console.log(`h:${horizontal} v:${vertical}`);
-  }
-
   onHorizontalMove(horizontal: number) {
     this.locationHorizontal = (1*this.locationHorizontal) + (1*horizontal);
     console.log(`h:${this.locationHorizontal} v:${this.locationVertical}`);
   }
+
   onVerticalMove(vertical: number) {
     this.locationVertical = (1*this.locationVertical) + (1*vertical);
     console.log(`h:${this.locationHorizontal} v:${this.locationVertical}`);
   }
 
-  onWeatherClicked(forecast: any)
-  {
+  onWeatherClicked(forecast: any) {
     // https://www.npmjs.com/package/jsonpath
     this.temprature = jsonPath.value(forecast, "$..temp");
     this.minTemprature = jsonPath.value(forecast, "$..temp_min");
@@ -50,7 +43,7 @@ export class AppComponent {
     this.preasure = jsonPath.value(forecast, "$..pressure");
     this.windSpeed = jsonPath.value(forecast, "$..speed");
     
-    console.log(`temp: ${this.temprature}`);
+    console.log(`temprature: ${this.temprature}`);
     this.forecast = JSON.stringify(forecast);
   }
 }
